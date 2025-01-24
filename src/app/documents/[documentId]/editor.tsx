@@ -6,6 +6,7 @@ import TaskList from "@tiptap/extension-task-list";
 import Table from "@tiptap/extension-table";
 import Image from '@tiptap/extension-image'
 import Underline from '@tiptap/extension-underline'
+import FontFamily from '@tiptap/extension-font-family'
 import ImageResize from 'tiptap-extension-resize-image'
 import TableCell from "@tiptap/extension-table-cell";
 import TableHeader from "@tiptap/extension-table-header";
@@ -13,6 +14,7 @@ import TableRow from "@tiptap/extension-table-row";
 import { useEditor, EditorContent } from "@tiptap/react";
 
 import { useEditorStore } from "@/store/use-editor-store";
+import TextStyle from "@tiptap/extension-text-style";
 
 export const Editor = () => {
   const { setEditor } = useEditorStore();
@@ -51,6 +53,8 @@ export const Editor = () => {
     },
     extensions: [
       StarterKit,
+      FontFamily,
+      TextStyle,
       Underline,
       Image,
       ImageResize,
