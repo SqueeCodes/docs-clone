@@ -5,6 +5,7 @@ import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
 import Table from "@tiptap/extension-table";
 import Image from "@tiptap/extension-image";
+import TextStyle from "@tiptap/extension-text-style";
 import Underline from "@tiptap/extension-underline";
 import { Color } from "@tiptap/extension-color";
 import Link from '@tiptap/extension-link';
@@ -18,8 +19,7 @@ import TableRow from "@tiptap/extension-table-row";
 import { useEditor, EditorContent } from "@tiptap/react";
 
 import { useEditorStore } from "@/store/use-editor-store";
-import TextStyle from "@tiptap/extension-text-style";
-
+import { FontSizeExtension } from "@/extensions/font-size";
 export const Editor = () => {
   const { setEditor } = useEditorStore();
 
@@ -57,6 +57,7 @@ export const Editor = () => {
     },
     extensions: [
       StarterKit,
+      FontSizeExtension,
       TextAlign.configure({
         types: ["heading","paragraph"]
       }),
