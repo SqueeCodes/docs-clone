@@ -11,6 +11,7 @@ import Link from '@tiptap/extension-link';
 import Highlight from "@tiptap/extension-highlight";
 import FontFamily from "@tiptap/extension-font-family";
 import ImageResize from "tiptap-extension-resize-image";
+import TextAlign from "@tiptap/extension-text-align";
 import TableCell from "@tiptap/extension-table-cell";
 import TableHeader from "@tiptap/extension-table-header";
 import TableRow from "@tiptap/extension-table-row";
@@ -56,6 +57,9 @@ export const Editor = () => {
     },
     extensions: [
       StarterKit,
+      TextAlign.configure({
+        types: ["heading","paragraph"]
+      }),
       Link.configure({
         openOnClick: false,
         autolink: true,
