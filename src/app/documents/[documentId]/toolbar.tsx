@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { type ColorResult, SketchPicker } from "react-color";
 import { type Level } from "@tiptap/extension-heading";
+import LineHeightIcon from "@assets/LineHeightIcon.svg";
 import { 
   AlignCenterIcon,
   AlignJustifyIcon,
@@ -14,7 +15,6 @@ import {
   ImageIcon, 
   ItalicIcon, 
   Link2Icon, 
-  ListCollapseIcon, 
   ListIcon, 
   ListOrderedIcon, 
   ListTodoIcon, 
@@ -68,7 +68,7 @@ const LineHeightButton = () => {
         <button
           className="h-7 min-w-7 shrink-0 flex flex-col items-center justify-center rounded-sm hover:bg-neutral-200/80 px-1.5 overflow-hidden text-sm"
         >
-          <ListCollapseIcon className="size-4" />
+          <LineHeightIcon className="size-4" />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="p-1 flex flex-col gap-y-1">
