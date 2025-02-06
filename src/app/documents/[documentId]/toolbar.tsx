@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { type ColorResult, SketchPicker } from "react-color";
 import { type Level } from "@tiptap/extension-heading";
-import LineHeightIcon from "@assets/LineHeightIcon.svg";
 import { 
   AlignCenterIcon,
   AlignJustifyIcon,
@@ -50,6 +49,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import LineHeightIcon from "@components/icons/line-height-icon";
 
 const LineHeightButton = () => {
   const { editor } = useEditorStore();
@@ -68,7 +68,9 @@ const LineHeightButton = () => {
         <button
           className="h-7 min-w-7 shrink-0 flex flex-col items-center justify-center rounded-sm hover:bg-neutral-200/80 px-1.5 overflow-hidden text-sm"
         >
-          <LineHeightIcon className="size-4" />
+        <div>
+          <image><LineHeightIcon /></image>
+        </div>
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="p-1 flex flex-col gap-y-1">
