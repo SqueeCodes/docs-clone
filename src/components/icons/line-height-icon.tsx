@@ -1,8 +1,7 @@
-"use client";
 
 import React from "react";
 
-const LineHeightIcon = () => {
+export const LineHeightIcon = () => {
   return (
     <svg
       width="20px"
@@ -22,6 +21,6 @@ const LineHeightIcon = () => {
   );
 };
 
-export default LineHeightIcon;
+
 
 
