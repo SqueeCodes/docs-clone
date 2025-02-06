@@ -49,7 +49,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import LineHeightIcon from "@components/icons/line-height-icon";
+import { LineHeightIcon } from "@/components/icons/line-height-icon";
 
 const LineHeightButton = () => {
   const { editor } = useEditorStore();
