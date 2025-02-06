@@ -49,7 +49,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { LineHeightIcon } from "@/components/icons/line-height-icon";
+import LineHeightIcon from "@/components/icons/line-height-icon";
 
 const LineHeightButton = () => {
   const { editor } = useEditorStore();
@@ -69,7 +69,7 @@ const LineHeightButton = () => {
           className="h-7 min-w-7 shrink-0 flex flex-col items-center justify-center rounded-sm hover:bg-neutral-200/80 px-1.5 overflow-hidden text-sm"
         >
         <div>
-          <image><LineHeightIcon /></image>
+          <img alt=""> <LineHeightIcon /></img>
         </div>
         </button>
       </DropdownMenuTrigger>
