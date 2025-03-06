@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 import { useSearchParams } from "@/hooks/use-search-param";
 
 export const SearchInput = () => {
-  const [search, setSearch] = useSearchParams("search");
-  const [value, setValue] = useState("");
+  const [search, setSearch] = useSearchParams();
+  const [value, setValue] = useState(search);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -19,6 +19,7 @@ export const SearchInput = () => {
 
   const handleClear = () => {
     setValue("");
+    setSearch("");
     inputRef.current?.blur();
   };
 
