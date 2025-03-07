@@ -9,7 +9,7 @@ export const Navbar = () => {
         <Link href="/">
           <Image src="/logo.svg" alt="Logo" width={36} height={36} />
         </Link>
-        <h3 className="text-xl">Docs</h3>
+        <h3 className="text-xl">Squee-Docs</h3>
       </div>
       <SearchInput />
       <div />
