@@ -18,7 +18,7 @@ interface DocumentsTableProps {
   documents: Doc<"documents">[] | undefined;
   loadMore: (numItems: number) => void;
   status: PaginationStatus;
-};
+}
 
 export const DocumentsTable = ({
   documents,
@@ -44,7 +44,10 @@ export const DocumentsTable = ({
           {documents.length === 0 ? (
             <TableBody>
               <TableRow className="hover:bg-transparent">
-                <TableCell colSpan={4} className="h-24 text-center text-muted-foreground">
+                <TableCell
+                  colSpan={4}
+                  className="h-24 text-center text-muted-foreground"
+                >
                   No documents found
                 </TableCell>
               </TableRow>
@@ -59,10 +62,10 @@ export const DocumentsTable = ({
         </Table>
       )}
       <div className="flex items-center justify-center">
-        <Button 
-          variant="ghost" 
-          size="sm" 
-          onClick={() => loadMore(5)} 
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => loadMore(5)}
           disabled={status !== "CanLoadMore"}
         >
           {status === "CanLoadMore" ? "Load more" : "End of results"}
