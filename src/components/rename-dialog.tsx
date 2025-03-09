@@ -79,7 +79,13 @@ export const RenameDialog = ({
             >
               Cancel
             </Button>
-            <Button>Save</Button>
+            <Button
+              type="submit"
+              disabled={isUpdateing}
+              onClick={(e) => e.stopPropagation()}
+            >
+              Save
+            </Button>
           </DialogFooter>
         </form>
       </DialogContent>
