@@ -1,4 +1,7 @@
 "use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useMutation } from "convex/react";
 
 import {
   Carousel,
@@ -9,10 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import { templates } from "@/constants/templates";
 import { cn } from "@/lib/utils";
-import { useMutation } from "convex/react";
-import { useRouter } from "next/router";
 import { api } from "../../../convex/_generated/api";
-import { useState } from "react";
 
 export const TemplatesGallery = () => {
   const router = useRouter();
@@ -49,7 +49,7 @@ export const TemplatesGallery = () => {
                 >
                   <button
                     disabled={isCreating}
-                    onClick={() => onTemplateClick(template.label, "")}
+                    onClick={() => onTemplateClick(template.label, "")} //TODO: Add initial content
                     style={{
                       backgroundImage: `url(${template.imageUrl})`,
                       backgroundSize: "cover",
