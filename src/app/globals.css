@@ -88,7 +88,6 @@ body {
 }
 
 .tiptap {
-  
   /* Link styles */
   a {
     @apply text-blue-600;
@@ -112,7 +111,6 @@ body {
     }
   }
 
-  
   /* Table-specific styling */
   table {
     border-collapse: collapse;
@@ -136,7 +134,7 @@ body {
     }
 
     th {
-      background-color: #C7C7C7;
+      background-color: #c7c7c7;
       font-weight: bold;
       text-align: left;
     }
@@ -144,7 +142,10 @@ body {
     .selectedCell:after {
       background: #959596;
       content: "";
-      left: 0; right: 0; top: 0; bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
       pointer-events: none;
       position: absolute;
       z-index: 2;
@@ -170,7 +171,6 @@ body {
     cursor: ew-resize;
     cursor: col-resize;
   }
-
 
   /* Heading styles */
   h1,
@@ -258,5 +258,35 @@ body {
     ul[data-type="taskList"] {
       margin: 0;
     }
+  }
+}
+
+/* For mobile */
+
+.floating-threads {
+  display: none;
+}
+
+/* For desktop */
+
+.anchored-threads {
+  display: block;
+
+  max-width: 300px;
+
+  width: 100%;
+
+  position: absolute;
+
+  right: 12px;
+}
+
+@media (max-width: 640px) {
+  .floating-threads {
+    display: block;
+  }
+
+  .anchored-threads {
+    display: none;
   }
 }

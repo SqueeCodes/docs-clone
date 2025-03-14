@@ -1,28 +1,36 @@
 "use client";
 
-import StarterKit from "@tiptap/starter-kit";
-import TaskItem from "@tiptap/extension-task-item";
-import TaskList from "@tiptap/extension-task-list";
-import Table from "@tiptap/extension-table";
-import Image from "@tiptap/extension-image";
-import TextStyle from "@tiptap/extension-text-style";
-import Underline from "@tiptap/extension-underline";
-import { Color } from "@tiptap/extension-color";
-import Link from "@tiptap/extension-link";
-import Highlight from "@tiptap/extension-highlight";
-import FontFamily from "@tiptap/extension-font-family";
+import StarterKit from '@tiptap/starter-kit'
+import TaskItem from '@tiptap/extension-task-item'
+import TaskList from '@tiptap/extension-task-list'
+import Table from '@tiptap/extension-table'
+import Image from '@tiptap/extension-image'
+import TextAlign from '@tiptap/extension-text-align'
+import Link from '@tiptap/extension-link'
+import { Color } from '@tiptap/extension-color'
+import Highlight from "@tiptap/extension-highlight"
+import FontFamily from '@tiptap/extension-font-family'
+import TextStyle from '@tiptap/extension-text-style'
+import Underline from '@tiptap/extension-underline'
 import ImageResize from "tiptap-extension-resize-image";
-import TextAlign from "@tiptap/extension-text-align";
-import TableCell from "@tiptap/extension-table-cell";
-import TableHeader from "@tiptap/extension-table-header";
-import TableRow from "@tiptap/extension-table-row";
-import { useEditor, EditorContent } from "@tiptap/react";
+import TableCell from '@tiptap/extension-table-cell'
+import TableHeader from '@tiptap/extension-table-header'
+import TableRow from '@tiptap/extension-table-row'
+import { useEditor, EditorContent } from '@tiptap/react'
+import { useLiveblocksExtension } from "@liveblocks/react-tiptap";
+import { useStorage } from '@liveblocks/react';
 
-import { useEditorStore } from "@/store/use-editor-store";
-import { FontSizeExtension } from "@/extensions/font-size";
-import { LineHeightExtension } from "@/extensions/line-height";
-import { Ruler } from "./ruler";
+import { useEditorStore } from '@/store/use-editor-store';
+import { FontSizeExtension } from '@/extensions/font-size';
+import { LineHeightExtension } from '@/extensions/line-height';
+import { LEFT_MARGIN_DEFAULT, RIGHT_MARGIN_DEFAULT } from '@/constants/margins';
+
+import { Ruler } from './ruler';
+import { Threads } from './threads';
+
 export const Editor = () => {
+  const liveblocks = useLiveblocksExtension();
+
   const { setEditor } = useEditorStore();
 
   const editor = useEditor({
@@ -59,7 +67,10 @@ export const Editor = () => {
       },
     },
     extensions: [
-      StarterKit,
+      liveblocks,
+      StarterKit.configure({
+        history: false,
+      }),
       LineHeightExtension.configure({
         types: ["heading", "paragraph"],
       }),
