@@ -1,35 +1,21 @@
 import { useRef, useState } from "react";
 import { FaCaretDown } from "react-icons/fa";
-// import { useStorage, useMutation } from "@liveblocks/react";
+import { useStorage, useMutation } from "@liveblocks/react";
 
-// import { RIGHT_MARGIN_DEFAULT, LEFT_MARGIN_DEFAULT } from "@/constants/margins";
-
-
-
-
-// DONT FORGET TO COPY AND PASTE THIS FILE ONCE YOU GET LIVE BLOCKS!!
-// DONT FORGET TO COPY AND PASTE THIS FILE ONCE YOU GET LIVE BLOCKS!!
-// DONT FORGET TO COPY AND PASTE THIS FILE ONCE YOU GET LIVE BLOCKS!!
-// DONT FORGET TO COPY AND PASTE THIS FILE ONCE YOU GET LIVE BLOCKS!!
-// DONT FORGET TO COPY AND PASTE THIS FILE ONCE YOU GET LIVE BLOCKS!!
-// DONT FORGET TO COPY AND PASTE THIS FILE ONCE YOU GET LIVE BLOCKS!!
-// DONT FORGET TO COPY AND PASTE THIS FILE ONCE YOU GET LIVE BLOCKS!!
-// DONT FORGET TO COPY AND PASTE THIS FILE ONCE YOU GET LIVE BLOCKS!!
-// DONT FORGET TO COPY AND PASTE THIS FILE ONCE YOU GET LIVE BLOCKS!!
-// DONT FORGET TO COPY AND PASTE THIS FILE ONCE YOU GET LIVE BLOCKS!!
-// DONT FORGET TO COPY AND PASTE THIS FILE ONCE YOU GET LIVE BLOCKS!!
-
-
-
-
-
-
+import { RIGHT_MARGIN_DEFAULT, LEFT_MARGIN_DEFAULT } from "@/constants/margins";
 
 const markers = Array.from({ length: 83 }, (_, i) => i);
 
 export const Ruler = () => {
-  const [leftMargin, setLeftMargin] = useState(false);
-  const [rightMargin, setRightMargin] = useState(false);
+  const leftMargin = useStorage((root) => root.leftMargin) ?? LEFT_MARGIN_DEFAULT;
+  const setLeftMargin = useMutation(({ storage }, position: number) => {
+    storage.set("leftMargin", position);
+  }, []);
+
+  const rightMargin = useStorage((root) => root.rightMargin) ?? RIGHT_MARGIN_DEFAULT;
+  const setRightMargin = useMutation(({ storage }, position: number) => {
+    storage.set("rightMargin", position);
+  }, []);
 
   const [isDraggingLeft, setIsDraggingLeft] = useState(false);
   const [isDraggingRight, setIsDraggingRight] = useState(false);
