@@ -41,6 +41,7 @@ import { DocumentInput } from "./document-input";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 import { Avatars } from "./avatars";
 import { Inbox } from "./inbox";
+import { Doc } from "../../../../convex/_generated/dataModel";
 
 interface NavbarProps {
   data: Doc<"documents">;
